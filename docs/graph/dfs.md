@@ -1,4 +1,4 @@
-author: Ir1d, greyqz, yjl9903, partychicken, ChungZH, qq1010903229, Marcythm, Acfboy, shenshuaijie
+author: Ir1d, greyqz, yjl9903, partychicken, ChungZH, qq1010903229, Marcythm, Acfboy, shenshuaijie, Craneplayz
 
 ## 引入
 
@@ -35,6 +35,21 @@ DFS 最显著的特征在于其 **递归调用自身**。同时与 BFS 类似，
 > -   在 Linux 上，通常的方法是在运行程序前 **在终端内** 执行 `ulimit -s unlimited`，表示栈空间无限。每个终端只需执行一次，对之后每次程序运行都有效。
 
 ## 实现
+
+以[领接表(Adjacency List)](./save.md#领接表)为图的存储方式：
+
+=== "Python"
+    ```python
+    # adj : list[list[int]] 是一个领接表
+    # vis : list[bool] 记录节点是否已经被遍历
+    
+    def dfs(u : int) -> None:
+	    vis[u] = True
+         
+    	for v in adj[u]:
+    	    if not vis[v]:
+			    dfs(v)
+    ```
 
 以链式前向星为例：（和上方伪代码每行一一对应）
 
